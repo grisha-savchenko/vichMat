@@ -15,14 +15,14 @@ template <typename T> int CompareFuncReverse(const void *elem1, const void *elem
 template <typename type> int funccompar(const void * key, const void * cmpelem);
 
 
-long double func(long double x ,int Vp, int Vf, long double a)
+long double func(long double x ,long double Vp, long double Vf, long double a)
 {
     return sqrt((1-a)*(1-a)+x*x) / Vp + sqrt((1-x)*(1-x)+a*a) / Vf;
 }
 
 void _solve()
 {
-    int Vp, Vf;
+    long double Vp, Vf;
 
     long double a;
 
@@ -41,11 +41,12 @@ void _solve()
         if(func(mid1, Vp, Vf, a) < func(mid2, Vp, Vf, a))
             right = mid2;
         else
-            left = mid1;
+            left = mid1;    
+            
     }
     
 
-    cout << std::fixed << std::setprecision(11) << left << endl;
+    cout << std::fixed << std::setprecision(9) << left << endl;
 
     
 }
